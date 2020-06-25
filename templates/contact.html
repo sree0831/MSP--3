@@ -7,6 +7,13 @@
         <div class="row">
           <div class="col-xl-9 mx-auto">      
             <div class="cta-inner text-center rounded">
+              {% with messages = get_flashed_messages() %} {% if messages %}
+        <ul class="flashes">
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %} {% endwith %}
                <div class="heading-section ftco-animate mb-5">
 		          	<span class="subheading">Book a table</span>
 		            <h2 class="mb-4">Make Reservation</h2>
@@ -45,7 +52,7 @@
 	                </div>
 	                <div class="col-md-6">
 	                  <div class="form-group">
-	                    <label for="">Person</label>
+	                    <label for="">Persons</label>
 	                    <div class="select-wrap one-third">
 	                      <div class="icon"><span class="ion-ios-arrow-down"></span></div>
 	                      <select name="" id="" class="form-control">
@@ -114,9 +121,9 @@
               </ul>
               <p class="address mb-5">
                 <em>
-                  <strong>1116 Orchard Street</strong>
+                  <strong>1116, Gamalastan</strong>
                   <br>
-                  Golden Valley, Minnesota
+                  Stockholm, Sweden.
                 </em>
               </p>
               <p class="mb-0">
@@ -124,7 +131,7 @@
                   <em>Call Anytime</em>
                 </small>
                 <br>
-                (317) 585-8468
+                +46703753213
               </p>
             </div>
           </div>
