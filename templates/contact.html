@@ -11,36 +11,36 @@
 		          	<span class="subheading">Book a table</span>
 		            <h2 class="mb-4">Make Reservation</h2>
 		          </div>
-	            <form action="#">
+	            <form method="POST" name="sentMessage" id="contactForm">
 	              <div class="row">
 	                <div class="col-md-6">
 	                  <div class="form-group">
 	                    <label for="">Name</label>
-	                    <input type="text" class="form-control" placeholder="Your Name">
+	                    <input type="text" class="form-control" placeholder="Name" name="name" id="name" required data-validation-required-message="Please enter your name.">
 	                  </div>
 	                </div>
 	                <div class="col-md-6">
 	                  <div class="form-group">
 	                    <label for="">Email</label>
-	                    <input type="text" class="form-control" placeholder="Your Email">
+	                    <input type="email" class="form-control" placeholder="Email Address" name="email" id="email" required data-validation-required-message="Please enter your email address.">
 	                  </div>
 	                </div>
 	                <div class="col-md-6">
 	                  <div class="form-group">
 	                    <label for="">Phone</label>
-	                    <input type="text" class="form-control" placeholder="Phone">
+	                    <input type="tel" class="form-control" placeholder="Phone Number" name="number" id="phone" required data-validation-required-message="Please enter your phone number.">
 	                  </div>
 	                </div>
 	                <div class="col-md-6">
 	                  <div class="form-group">
 	                    <label for="">Date</label>
-	                    <input type="text" class="form-control" id="book_date" placeholder="Date">
+	                    <input type="text" class="form-control" id="book_date" placeholder="Date" name="date" id="date" required data-validation-required-message="Please enter your prefered date.">
 	                  </div>
 	                </div>
 	                <div class="col-md-6">
 	                  <div class="form-group">
 	                    <label for="">Time</label>
-	                    <input type="text" class="form-control" id="book_time" placeholder="Time">
+	                    <input type="text" class="form-control" id="book_time" placeholder="Time" name="time" id="time" required data-validation-required-message="Please enter your available time.">
 	                  </div>
 	                </div>
 	                <div class="col-md-6">
@@ -72,6 +72,64 @@
         </div>
       </div>
     </section>
+
+     <section class="page-section cta">
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-9 mx-auto">
+            <div class="cta-inner text-center rounded">
+              <h2 class="section-heading mb-5">
+                <span class="section-heading-upper">Come On In</span>
+                <span class="section-heading-lower">We're Open</span>
+              </h2>
+              <ul class="list-unstyled list-hours mb-5 text-left mx-auto">
+                <li class="list-unstyled-item list-hours-item d-flex">
+                  Sunday
+                  <span class="ml-auto">Closed</span>
+                </li>
+                <li class="list-unstyled-item list-hours-item d-flex">
+                  Monday
+                  <span class="ml-auto">7:00 AM to 8:00 PM</span>
+                </li>
+                <li class="list-unstyled-item list-hours-item d-flex">
+                  Tuesday
+                  <span class="ml-auto">7:00 AM to 8:00 PM</span>
+                </li>
+                <li class="list-unstyled-item list-hours-item d-flex">
+                  Wednesday
+                  <span class="ml-auto">7:00 AM to 8:00 PM</span>
+                </li>
+                <li class="list-unstyled-item list-hours-item d-flex">
+                  Thursday
+                  <span class="ml-auto">7:00 AM to 8:00 PM</span>
+                </li>
+                <li class="list-unstyled-item list-hours-item d-flex">
+                  Friday
+                  <span class="ml-auto">7:00 AM to 8:00 PM</span>
+                </li>
+                <li class="list-unstyled-item list-hours-item d-flex">
+                  Saturday
+                  <span class="ml-auto">9:00 AM to 5:00 PM</span>
+                </li>
+              </ul>
+              <p class="address mb-5">
+                <em>
+                  <strong>1116 Orchard Street</strong>
+                  <br>
+                  Golden Valley, Minnesota
+                </em>
+              </p>
+              <p class="mb-0">
+                <small>
+                  <em>Call Anytime</em>
+                </small>
+                <br>
+                (317) 585-8468
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
 
 
 {% endblock %}
