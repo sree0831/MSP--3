@@ -1,8 +1,17 @@
   
 import os
-from flask import Flask, render_template, request, flash
+from flask import Flask, render_template, request, flash ,redirect ,url_for
+from flask_pymongo import PyMongo
+from bson.objectid import ObjectId 
+
 
 app = Flask(__name__)
+
+app.config["MONGO_DBNAME"] = 'tasty'
+app.config["MONGO_URI"] = 'mongodb+srv://sree:sreeUser@tasty-mq6mv.mongodb.net/tasty?retryWrites=true&w=majority'
+
+mongo = PyMongo(app)
+
 app.secret_key = 'some_secret'
 
 @app.route('/')
@@ -27,6 +36,20 @@ def contact():
 @app.route('/recipes')
 def recipes():
     return render_template("recipes.html")
+
+# -----Add Recipe------
+@app.route('/add_recipe')
+def add_recipe():
+    return render_template('add recipe.html',
+                           categories=mongo.db.categories.find())
+
+
+@app.route('/insert_recipe', methods=['POST'])
+def insert_recipe():
+    recipes = mongo.db.recipes
+    recipes.insert_one(request.form.to_dict())
+    return redirect(url_for('recipes'))
+
 
 if __name__ == "__main__":
     app.run(
