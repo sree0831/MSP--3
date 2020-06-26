@@ -1,23 +1,15 @@
 {% extends 'base.html' %} {% block content %}
-    
-<div class="container"> 
-  <div class="row">
-    <h3>Add Recipe</h3>
-    
+
+ <section class="page-section cta">
+      <div class="container">  
+        <div class="row">
+          <div class="col-md-6-auto">      
+            <div class="cta-inner text-center rounded">
+            <div class="heading-section ftco-animate mb-5">
+		            <h2 class="mb-4">Add Recipe</h2>
+		          </div>   
+
         
-     <div class="row">   
-        <div class="input-field col s12">
-            <i class="material-icons prefix">local_dining</i>
-            <select id="category_name" name="category_name">
-              <option value="" disabled selected>Choose a Cusine</option>
-               {% for cat in categories %}
-                      <option value="{{cat.category_name}}">{{cat.category_name}}</option>
-               {% endfor %}
-            </select>
-            <label>Type of Cusine</label>
-        </div>
-     </div>
-     
       <div class="row">
         <div class="col-md-6">
           <i class="material-icons prefix">label_outline</i>
@@ -57,7 +49,7 @@
 
         
         
-        <div class="row">
+        <div class="col-md-12 mt-3">
             <button class="btn waves-effect deep-orange lighten-2 btn_add_recipe" type="submit" name="action">Add New Recipe
                 <i class="material-icons right">local_dining</i>
              </button>
@@ -67,5 +59,10 @@
     </form>
   </div>
 </div>  
+
+          </div>
+        </div>
+      </div>
+ </section>
 
 {% endblock %}
