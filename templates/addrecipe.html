@@ -1,0 +1,68 @@
+{% extends 'base.html' %} {% block content %}
+
+ <section class="page-section cta">
+      <div class="container">  
+        <div class="row">
+          <div class="col-md-6-auto">      
+            <div class="cta-inner text-center rounded">
+            <div class="heading-section ftco-animate mb-5">
+		            <h2 class="mb-4">Add Recipe</h2>
+		          </div>  
+                   <form action="{{ url_for('insert_recipe') }}" method="POST" class="col s12"> 
+    
+      <div class="row">
+        <div class="col-md-6">
+          <i class="material-icons prefix">label_outline</i>
+          <input id="recipe_name" name="recipe_name" type="text" class="validate">
+          <label for="icon_prefix"> Recipe Name </label></textarea>
+        </div>
+        
+        <div class="col-md-6">
+          <i class="material-icons prefix">comment</i>
+          <input id="recipe_intro" name="recipe_intro" type="text" class="validate">
+          <label for="icon_prefix"> Dietary </label>
+        </div>
+        
+        <div class="col-md-6">
+          <i class="material-icons prefix">list</i>
+          <input id="ingredients" name="ingredients" type="text" class="validate">
+          <label for="icon_prefix"> Ingredients </label>
+        </div>
+        
+        <div class="col-md-6">
+          <i class="material-icons prefix">local_pizza</i>
+          <input id="description" name="description" type="text" class="validate">
+          <label for="icon_prefix"> How to Make it? </label>
+        </div>
+        
+        <div class="col-md-6">
+          <i class="material-icons prefix">access_time</i>
+          <input id="preparation_time" name="preparation_time" type="text" class="validate">
+          <label for="icon_prefix"> Preparation Time </label>
+        </div>
+        
+        <div class="col-md-6">
+          <i class="material-icons prefix">local_see</i>
+          <input id="photo_url" name="photo_url" type="text" class="validate">
+          <label for="icon_prefix"> Photo URL </label>
+        </div>
+
+        
+        
+        <div class="col-md-12 mt-3">
+            <button class="btn waves-effect deep-orange lighten-2 btn_add_recipe" type="submit" name="action">Add New Recipe
+                <i class="material-icons right">local_dining</i>
+             </button>
+        </div>
+        
+      </div>
+    </form>
+  </div>
+</div>  
+
+          </div>
+        </div>
+      </div>
+ </section>
+
+{% endblock %}

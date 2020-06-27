@@ -19,9 +19,9 @@ def index():
     return render_template("index.html")
 
 
-@app.route('/menu')
-def menu():
-    return render_template("menu.html")
+@app.route('/recipes')
+def recipes():
+    return render_template("recipes.html")
 
 
 @app.route('/contact', methods=["GET", "POST"])
@@ -33,14 +33,11 @@ def contact():
     return render_template("contact.html", page_title="Contact")
 
 
-@app.route('/recipes')
-def recipes():
-    return render_template("recipes.html")
 
-# -----Add Recipe------
+#------add recipe------
 @app.route('/add_recipe')
 def add_recipe():
-    return render_template('add recipe.html',
+    return render_template('addrecipe.html',
                            categories=mongo.db.categories.find())
 
 
@@ -48,8 +45,36 @@ def add_recipe():
 def insert_recipe():
     recipes = mongo.db.recipes
     recipes.insert_one(request.form.to_dict())
-    return redirect(url_for('recipes'))
+    return redirect(url_for('get_recipes'))
 
+# -----recipes page---
+
+@app.route('/recipes')
+@app.route('/get_recipes')
+def get_recipes():
+    if (request.args.get('recipe_name') is not None 
+    or request.args.get('preparation_time') is not None): 
+    
+        recipename = None
+        preparationtime = None
+        
+        
+        if request.args.get('recipe_name') is not None and request.args.get('recipe_name') is not '':
+            recipenameregex = "\W*"+request.args.get("recipe_name")+"\W*"
+            recipename = re.compile(recipenameregex, re.IGNORECASE)
+          
+        if request.args.get('preparation_time') is not None and request.args.get('preparation_time') is not '':
+            preparationtimeregex = "\W*"+request.args.get("preparation_time")+"\W*"
+            preparationtime = re.compile(preparationtimeregex, re.IGNORECASE)
+        
+        
+            
+
+        recipes=mongo.db.recipes.find( { "$or": [{"recipe_name": recipename}, {"preparation_time": preparationtime}] } )
+        return render_template("recipes.html", recipes=recipes, ) 
+        
+    return render_template("recipes.html", recipes=mongo.db.recipes.find(),) 
+    
 
 if __name__ == "__main__":
     app.run(
