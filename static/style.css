@@ -103,7 +103,7 @@
 
 .ingredients-box {
     background-color: #f5f8fa;
-    border-radius: 2px;
+    border-radius: 4px;
 }
 
 .btn-icon {
@@ -184,9 +184,7 @@ a.delete-item-link {
         display: block;
   }
   
-  .chart-container {
-      height: 50vh;
-  }
+
   
 }
 
