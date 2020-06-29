@@ -1,8 +1,14 @@
 {% extends 'base.html' %} {% block content %}
 
 
+<section class="page-section cta">
+      <div class="container">  
+        <div class="row">
+          <div class="col-md-6-auto">      
+            <div class="cta-inner text-center rounded">
+
     <div class="row">
-        <div class="col-lg-12">
+        <div class="col-14">
             <div class="card card-single-recipe">
             {% for recipe in recipes %}
                     <div class="card-content">
@@ -42,6 +48,11 @@
         </div>
     </div>
   </div>
+            </div>
+          </div>
+        </div>
+      </div>
+</section>
 
 
 {% endblock %}
