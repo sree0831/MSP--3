@@ -19,10 +19,6 @@ def index():
     return render_template("index.html")
 
 
-@app.route('/recipes')
-def recipes():
-    return render_template("recipes.html")
-
 
 @app.route('/contact', methods=["GET", "POST"])
 def contact():
@@ -49,15 +45,15 @@ def insert_recipe():
 
 # -----recipes page---
 
-@app.route('/recipes')
+@app.route('/')
 @app.route('/get_recipes')
 def get_recipes():
     if (request.args.get('recipe_name') is not None 
-    or request.args.get('preparation_time') is not None): 
-    
+    or request.args.get('preparation_time') is not None 
+    or request.args.get('category_name') is not None):
         recipename = None
         preparationtime = None
-        
+        categoryname = None
         
         if request.args.get('recipe_name') is not None and request.args.get('recipe_name') is not '':
             recipenameregex = "\W*"+request.args.get("recipe_name")+"\W*"
@@ -67,14 +63,18 @@ def get_recipes():
             preparationtimeregex = "\W*"+request.args.get("preparation_time")+"\W*"
             preparationtime = re.compile(preparationtimeregex, re.IGNORECASE)
         
-        
+        if request.args.get('category_name') is not None and request.args.get('category_name') is not '':
+            categoryregex = "\W*"+request.args.get("category_name")+"\W*"
+            categoryname = re.compile(categoryregex, re.IGNORECASE)
             
 
         recipes=mongo.db.recipes.find( { "$or": [{"recipe_name": recipename}, {"preparation_time": preparationtime}] } )
-        return render_template("recipes.html", recipes=recipes, ) 
+        return render_template("recipes.html", recipes=recipes) 
         
-    return render_template("recipes.html", recipes=mongo.db.recipes.find(),) 
+    return render_template("recipes.html", recipes=mongo.db.recipes.find())
 
+    
+    
 
 # -----Edit Recipe------
 
@@ -114,7 +114,10 @@ def recipe_single(recipe_id):
 def delete_recipe(recipe_id):
     mongo.db.recipes.remove({'_id': ObjectId(recipe_id)})
     return redirect(url_for('get_recipes'))
-    
+
+
+
+   
 
 if __name__ == "__main__":
     app.run(

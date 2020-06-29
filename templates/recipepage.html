@@ -8,7 +8,7 @@
             <div class="cta-inner text-center rounded">
 
     <div class="row">
-        <div class="col-14">
+        <div class="col-md-12">
             <div class="card card-single-recipe">
             {% for recipe in recipes %}
                     <div class="card-content">
@@ -21,8 +21,9 @@
                     </div>
                     
                     <div class="card-image responsive-img">
-                       <img class="responsive-img" src="{{recipe.photo_url}}"></img>
+                    <img src="{{recipe.photo_url}}" class="img-fluid" alt="Responsive image">
                     </div>
+                    
                     
                     <div>
                       <div class="card-content ingredients-box">
