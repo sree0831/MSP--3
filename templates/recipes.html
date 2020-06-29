@@ -1,4 +1,33 @@
   
 {% extends 'base.html' %} {% block content %}
-<h1>Recipes</h1>
+<!--Search Box--> 
+<div class="container search-form">
+  <div class="row input-field search-div">
+    <h6>Select one of the options to search for your favourite recipes</h6>
+    <form class="search-form-form" action="/get_recipes">
+
+    <div class="row">
+             <div class="form-field-div col md6 m4">
+                <p>Recipe name :</p>
+                <input type="text" name="recipe_name" value="">
+             </div> 
+             
+             <div class="form-field-div col md6 m4">
+                <p>Prep. time :</p>
+                <input type="text" name="preparation_time" value="">
+             </div>
+            
+            <div class="col-md-12 mt-3">
+            <button class="btn waves-effect deep-orange lighten-2 btn_add_recipe" type="submit" name="action">Search Recipe
+                <i class="material-icons right">local_dining</i>
+             </button>
+        </div>
+    </div>
+        
+
+        
+    </form>
+  </div>
+</div>
+
 {% endblock %}
