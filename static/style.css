@@ -141,12 +141,6 @@ a.delete-item-link {
     vertical-align: super;
 }
 
-/* Chart page */
-
-#myChart {
-      width: 600;
-      height: 600;
-  }
 
  
 /********** Container css *******/ 
@@ -170,16 +164,6 @@ a.delete-item-link {
     border-width: 1px;
 }
 
-/********** Categories page css *******/ 
-
-.collection-item:hover {
-    background-color: #f5f8fa;
-}
-
-strong {
-    font-size: larger;
-    color: #32475b;
-}
 
 
  /********** Container css *******/  
