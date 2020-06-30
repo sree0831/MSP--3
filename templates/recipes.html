@@ -11,20 +11,20 @@
    
   {% if recipes.count() <= 0 %}
     <div>
-      <p>No cuisine found</p>
+      <p>No recipes found</p>
     </div>
   {% else %}
       {% for recipe in recipes %}
               <div class="col-sm-5 offset-sm-2 col-md-6 offset-md-0">
                 <div class="card hoverable">
                   <div class="card-image">
-                    <a href="{{url_for('recipe_single', recipe_id=recipe._id)}}"><img class="card-image-img" src="{{recipe.photo_url}}"></a>
-                    <a class="btn-floating halfway-fab waves-effect waves-light red" href="{{url_for('recipe_single', recipe_id=recipe._id)}}"><i class="material-icons btn-icon">import_contacts</i></a>
+                    <a href="{{url_for('recipe_single', recipe_id=recipe._id)}}"><img class=" img-fluid" src="{{recipe.photo_url}}"></a>
         
                   </div>
                   
                   <div class="card-content">
                     <a href="{{url_for('recipe_single', recipe_id=recipe._id)}}"><span class="card-title">{{recipe.recipe_name}}</span></a>
+                    <a class="btn btn-brown" href="{{url_for('recipe_single', recipe_id=recipe._id)}}"><i class="material-icons btn-icon">import_contacts</i></a>
                     <div class="icon-cook-div"><i class="icon-cook material-icons prefix">timer</i><p class="descript">{{recipe.preparation_time}}</p></div>
   
                   </div>
