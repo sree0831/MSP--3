@@ -8,7 +8,7 @@ from bson.objectid import ObjectId
 app = Flask(__name__)
 
 app.config["MONGO_DBNAME"] = 'tasty'
-app.config["MONGO_URI"] = 'mongodb+srv://sree:sreeUser@tasty-mq6mv.mongodb.net/tasty?retryWrites=true&w=majority'
+app.config["MONGO_URI"] = os.getenv('MONGO_URI')
 
 mongo = PyMongo(app)
 
