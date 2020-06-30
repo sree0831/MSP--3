@@ -1,6 +1,6 @@
 import os
 import pymongo
-if os.path.exists("env.py"):
+if os.path.exists("run.py"):
     import env
 
 
