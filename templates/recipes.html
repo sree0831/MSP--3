@@ -7,7 +7,7 @@
 
 
 <div class="container">
- <div class="row recipes-list">
+ <div class="row row-cols-1 row-cols-md-2">
    
   {% if recipes.count() <= 0 %}
     <div>
@@ -15,8 +15,8 @@
     </div>
   {% else %}
       {% for recipe in recipes %}
-              <div class="col-sm-5 offset-sm-2 col-md-6 offset-md-0">
-                <div class="card hoverable">
+              <div class="col mb-4">
+                <div class="card hover">
                   <div class="card-image">
                     <a href="{{url_for('recipe_single', recipe_id=recipe._id)}}"><img class=" img-fluid" src="{{recipe.photo_url}}"></a>
         
