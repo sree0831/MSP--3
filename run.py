@@ -1,8 +1,9 @@
   
 import os
-from flask import Flask, render_template, request, flash ,redirect ,url_for
+from flask import Flask, render_template, request, flash ,redirect ,url_for, session
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId 
+
 if os.path.exists("env.py"):
     import env
 
@@ -20,7 +21,7 @@ app.secret_key = 'some_secret'
 def index():
     return render_template("index.html")
 
-
+#------contact page-------
 
 @app.route('/contact', methods=["GET", "POST"])
 def contact():
@@ -117,6 +118,59 @@ def delete_recipe(recipe_id):
     mongo.db.recipes.remove({'_id': ObjectId(recipe_id)})
     return redirect(url_for('get_recipes'))
 
+
+# ----Register--------
+@app.route('/register', methods=['POST', 'GET'])
+def register():
+
+
+    # check for logged in user
+    email = session.get('email')
+    if email:
+        return redirect(url_for('index'))
+
+    user = None
+    if request.method == 'POST':
+        name = request.form['name']
+        email = request.form['email']
+        password = request.form['password']
+        user = {'name': name, 'email': email, 'password': password}
+
+        if mongo.db.users.find_one({"email": email}):
+            return render_template('register.html', title='Register | Tasty Things', error="user_exists")
+        else:
+            mongo.db.users.insert_one(user)
+            return render_template('login.html', title='Login | Tasty Things', user=user, password=password)
+
+    return render_template('register.html', title='Register | Tasty Things')
+    
+
+#----login----
+@app.route('/login', methods=['POST', 'GET'])
+def login():
+    # check for logged in user
+    email = session.get('email')
+    if email:
+        return redirect(url_for('register'))
+
+    user = None
+    if request.method == 'POST':
+        email = request.form["email"]
+        user = mongo.db.users.find_one({"email": email})
+
+        try:
+            assert(user["password"] == request.form["password"])
+        except (AssertionError, TypeError):
+            return render_template('login.html', title='Login | Tasty Things', user=None, error="incorrect_login")
+        else:
+            try:
+                session['name'] = user['name']
+            except KeyError:
+                session['name'] = 'John Doe'
+            session['email'] = email
+            return redirect(url_for("index"))
+
+    return render_template('login.html', title='Login | Tasty Things', user=user)
 
 
 
