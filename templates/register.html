@@ -1,45 +1,74 @@
 {% extends 'base.html' %} {% block content %}
+<section class="form-light">
 
- <section class="page-section cta">
-      <div class="container">  
-        <div class="row">
-          <div class="col-xl-12 mx-auto">      
-            <div class="cta-inner text-center ">
-            <div class="heading-section ftco-animate mb-5">
-                        <h2>
-                            Register
-                        </h2>
+  <!--Form without header-->
+  <div class="card">
+
+    <div class="card-body mx-4">
+
+      <!--Header-->
+      <div class="text-center">
+        <h3 class="pink-text mb-5"><strong>Register</strong></h3>
+      </div>
+
                         <form action="{{ url_for('register') }}" method="POST">
 
-                            <div class="input-field">
-                            <i class="material-icons prefix">face</i>
-                                <input type="text" id="name" name="name" required  placeholder="Full Name">
+                         <div class="md-form">
+                                <input type="text" id="user" class="form-control"  name="name" required>
+                                  <i class="material-icons prefix">face</i>
+                                <label for="user">User Name</label>
                                 
                             </div>
 
-                            <div class="input-field">
-                                <i class="material-icons prefix">email</i>
-                                <input type="email" id="email" name="email" required placeholder="Email">
+                            <div class="md-form">
+                                <input type="text" id="email" class="form-control"  name="email" required >
                                 {% if error == 'user_exists' %}
                                     <span class="existing-email">That email address already exists.</span>
                                 {% endif %}
+                                 <i class="material-icons prefix">email</i>
+                                <label for="email">Email</label>
                             </div>
 
-                            <div class="input-field">
-                                <i class="material-icons prefix">lock</i>
-                                <input type="password" id="password" name="password" required placeholder="Password">
+                            <div class="md-form pb-3">
+                                <input type="password" id="password" class="form-control" name="password" required placeholder="Password">
+                                 <i class="material-icons prefix">lock</i>
+                                <label for="password">Password</label>
                             </div>
 
-                            </div>
-                            <input type="submit" value="Register" class="btn btn-large btn-extended ">
-                            </div>
-
-                        </form>
-                    </div>
-                </div>
-            </div>
+                       
+        <div class="form-check my-4">
+          <input class="form-check-input" type="checkbox" id="defaultCheck12">
+          <label for="defaultCheck12" class="grey-text">Accept the<a href="#" class="blue-text"> Terms and
+              Conditions</a></label>
         </div>
- </section>
+      </div>
+
+      <!--Grid row-->
+      <div class="row d-flex align-items-center mb-4">
+
+        <!--Grid column-->
+        <div class="col-md-3 col-md-6 text-center">
+          <button type="button" class="btn btn-brown btn-block btn-rounded z-depth-1">Register</button>
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-md-6">
+          <p class="font-small grey-text d-flex justify-content-end"> Have an account?  <a href="{{ url_for('login') }}"
+              class="blue-text ml-1"> Sign In</a></p>
+        </div>
+        <!--Grid column-->
+
+      </div>
+      <!--Grid row-->
+    </div>
+
+  
+
+  </div>
+  <!--/Form without header-->
+
+</section>
  
 
 

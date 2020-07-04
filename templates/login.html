@@ -1,38 +1,65 @@
 {% extends 'base.html' %} {% block content %}
 
-    <section class="section section-login">
-        <div class="container">
-            <div class="row">
-                
-                <!-- Sign In -->
-                <div class="col s12 m8 offset-m2 l6 offset-l3">
-                    <div class="card-panel login center">
-                        <h2 class="varThree">
-                            Sign In
-                        </h2>
+<section class="form-light">
+
+  <!--Form without header-->
+  <div class="card">
+
+    <div class="card-body mx-4">
+
+      <!--Header-->
+      <div class="text-center">
+        <h3 class="pink-text mb-5"><strong>Sign In</strong></h3>
+      </div>
 
                         <form action="{{ url_for('login') }}" method="POST">
                             {% if error == 'incorrect_login' %}
                                 <span style="color: red;">Your login details were incorrect.</span>
                             {% endif %}
-                            <div class="input-field">
-                                <i class="sign-register-icon material-icons prefix">email</i>
-                                <input type="email" id="email" name="email" required value="{{ user.email }}">
-                                <label class="dark-grey" for="email">Email</label>
-                            </div>
-                            <div class="input-field">
-                                <i class="sign-register-icon material-icons prefix">lock</i>
-                                <input type="password" id="password" name="password" required value="{{ user.password }}">
-                                <label class="dark-grey" for="password">Password</label>
-                            </div>
-                            <br>
-                            <input type="submit" value="Sign In" class="btn btn-large btn-extended varBtnTwo">
-                        </form>
 
-                    </div>
-                </div>
-            </div>
+                            <div class="md-form">
+                               <input type="text" id="Form-email2" class="form-control"  name="email" required value="{{ user.email }}">
+                               <i class="sign-register-icon material-icons prefix">email</i>
+                               <label for="Form-email2">Your email</label>
+                            </div>
+
+      <div class="md-form pb-3">
+        <input type="password" id="Form-pass2" class="form-control" name="password" required value="{{ user.password }}">
+        <i class="sign-register-icon material-icons prefix">lock</i>
+        <label for="Form-pass2">Your password</label>
+        <div class="form-check my-4">
+          <input class="form-check-input" type="checkbox" id="defaultCheck12">
+          <label for="defaultCheck12" class="grey-text">Accept the<a href="#" class="blue-text"> Terms and
+              Conditions</a></label>
         </div>
-    </section>
+      </div>
+
+      <!--Grid row-->
+      <div class="row d-flex align-items-center mb-4">
+
+        <!--Grid column-->
+        <div class="col-md-3 col-md-6 text-center">
+          <button type="button" class="btn btn-brown btn-block btn-rounded z-depth-1">Sign In</button>
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-md-6">
+          <p class="font-small grey-text d-flex justify-content-end">Don't have an account?  <a href="{{ url_for('register') }}"
+              class="blue-text ml-1"> Register</a></p>
+        </div>
+        <!--Grid column-->
+
+      </div>
+      <!--Grid row-->
+    </div>
+
+  
+
+  </div>
+  <!--/Form without header-->
+
+</section>
+                            
 
   {% endblock %}
