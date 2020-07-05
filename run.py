@@ -126,16 +126,18 @@ def recipe_single(recipe_id):
 
 # -----Delete Recipe------
 
+
 @app.route('/delete_recipe/<recipe_id>')
 def delete_recipe(recipe_id):
     # check for logged in user
     email = session.get('email')
     if not email:
         return redirect(url_for('register'))
-    try:
-        mongo.db.recipes.delete_one({"_id": ObjectId(id), 'email': email})
-    except:
-        return redirect(url_for('recipes'))
+        
+    mongo.db.recipes.remove({'_id': ObjectId(recipe_id)})
+    return redirect(url_for('get_recipes'))
+    
+    
 
 
 
