@@ -1,5 +1,6 @@
   
 import os
+import math
 from flask import Flask, render_template, request, flash ,redirect ,url_for, session
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId 
@@ -36,6 +37,12 @@ def contact():
 #------add recipe------
 @app.route('/add_recipe')
 def add_recipe():
+    # check for logged in user
+    email = session.get('email')
+    inserted_id = 0
+    if not email:
+        return redirect(url_for('login'))
+
     return render_template('addrecipe.html',
                            categories=mongo.db.categories.find())
 
@@ -51,6 +58,7 @@ def insert_recipe():
 @app.route('/')
 @app.route('/get_recipes')
 def get_recipes():
+
     if (request.args.get('recipe_name') is not None 
     or request.args.get('preparation_time') is not None 
     or request.args.get('category_name') is not None):
@@ -83,6 +91,11 @@ def get_recipes():
 
 @app.route('/edit_recipe/<recipe_id>')
 def edit_recipe(recipe_id):
+     # check for logged in user
+    email = session.get('email')
+    if not email:
+        return redirect(url_for('register'))
+
     the_recipe =  mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     return render_template('editrecipe.html', recipe=the_recipe,)
 
@@ -115,8 +128,16 @@ def recipe_single(recipe_id):
 
 @app.route('/delete_recipe/<recipe_id>')
 def delete_recipe(recipe_id):
-    mongo.db.recipes.remove({'_id': ObjectId(recipe_id)})
-    return redirect(url_for('get_recipes'))
+    # check for logged in user
+    email = session.get('email')
+    if not email:
+        return redirect(url_for('register'))
+    try:
+        mongo.db.recipes.delete_one({"_id": ObjectId(id), 'email': email})
+    except:
+        return redirect(url_for('recipes'))
+
+
 
 
 # ----Register--------
