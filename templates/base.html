@@ -12,7 +12,7 @@
 
      <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}" type="text/css" />
 
-      <link rel="stylesheet" href="{{url_for('static', filename='js/script.js')}}" type="text/js" />
+      
 
         
 
@@ -43,13 +43,23 @@
           <li class="nav-item px-lg-4">
             <a class="nav-link text-uppercase text-expanded" href="{{ url_for('get_recipes') }}">Recipes</a>
           </li>
-          <li class="nav-item px-lg-4">
-            <a class="nav-link text-uppercase text-expanded" href="{{ url_for('add_recipe') }}">Add Recipe</a>
-          </li>
+        
           <li class="nav-item px-lg-4">
             <a class="nav-link text-uppercase text-expanded" href="{{ url_for('login') }}">Sign In</a>
           </li>
+
           <li class="nav-item px-lg-4">
+            <a class="nav-link text-uppercase text-expanded" href="{{ url_for('add_recipe') }}">Add Recipe</a>
+          </li>
+
+          
+          {% if session['email'] != None %}
+           <li class="nav-item px-lg-4">
+                <a class="nav-link text-uppercase text-expanded" href="{{ url_for('logout') }}">Sign Out</a>
+                            </li>
+             {% endif %}
+
+            <li class="nav-item px-lg-4">
             <a class="nav-link text-uppercase text-expanded" href="{{ url_for('contact') }}">Contact</a>
           </li>
         </ul>
@@ -75,7 +85,7 @@
     <script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 
 
-    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 
 </body>
 

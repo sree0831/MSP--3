@@ -197,6 +197,15 @@ def login():
 
 
 
+@app.route('/logout')
+def logout():
+    #  logout user and clear session
+    session['email'] = None
+    session['name'] = None
+    # session.clear()
+    return redirect(url_for('login'))
+
+
 
 
 
