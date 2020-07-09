@@ -5,12 +5,17 @@
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
      <link href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+
     <link rel="stylesheet" href="{{ url_for('static', filename='css/business-casual.min.css') }}" type="text/css" />
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css" />
     
      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-     <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}" type="text/css" />
+    
+    
 
       
 
@@ -81,11 +86,12 @@
   </footer>
 
   <!-- Bootstrap core JavaScript -->
+
+    <script src="{{ url_for('static', filename='vendor/jquery/script.js')}}"></script>
     <script src="{{ url_for('static', filename='vendor/jquery/jquery.min.js') }}"></script>
     <script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 
 
-    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 
 </body>
 

@@ -1,4 +1,6 @@
 {% extends 'base.html' %} {% block content %}
+
+
 <div class="intro">
         <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src= "static/img/wel.jpg" alt="">
         <div class="intro-text left-0 text-center bg-faded p-5 rounded">
@@ -8,13 +10,18 @@
           </h2>
           <p class="mb-3">Every recipe  has it's own history ! Share and order your recipes with us . Our chefs will try to create the same taste with fresh hand picked ingredients - we guarantee it!
           </p>
+
+          
           <div class="intro-button mx-auto">
+          
             <a class="btn btn-primary btn-xl" href="{{ url_for('add_recipe') }}">Add Your Recipe!</a>
           </div>
         </div>
       </div>
     </div>
   </section>
+
+
 
   <section class="page-section cta">
     <div class="container">
@@ -31,6 +38,15 @@
       </div>
     </div>
   </section>
+
+<!--BACK TO TOP -->
+ <div class="row">
+  <div class="col-12">
+    <button onclick="topFunction()" id="myBtn" title="Go to top" class="material-icons">keyboard_arrow_up</button>
+  </div>
+</div>
+
+ 
 
 
 {% endblock %}

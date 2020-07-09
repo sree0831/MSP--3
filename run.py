@@ -41,8 +41,9 @@ def add_recipe():
     email = session.get('email')
     inserted_id = 0
     if not email:
+         
         return redirect(url_for('login'))
-
+        
     return render_template('addrecipe.html',
                            categories=mongo.db.categories.find())
 
@@ -83,6 +84,10 @@ def get_recipes():
         return render_template("recipes.html", recipes=recipes) 
         
     return render_template("recipes.html", recipes=mongo.db.recipes.find())
+
+
+
+   
 
     
     
@@ -136,7 +141,9 @@ def delete_recipe(recipe_id):
         
     mongo.db.recipes.remove({'_id': ObjectId(recipe_id)})
     return redirect(url_for('get_recipes'))
-    
+
+
+
     
 
 
@@ -203,6 +210,7 @@ def logout():
     session['email'] = None
     session['name'] = None
     # session.clear()
+   
     return redirect(url_for('login'))
 
 

@@ -42,12 +42,14 @@
                          <br> 
                          <p>{{recipe.description}}</p>                       
                     </div>
-                    
+
+                     {% if session.username == recipe.recipe_credits or session.username == 'admin' %}  
                     <div class="card-content red lighten-5 links-botton-card">
                         <a class="btn btn-info" href="{{url_for('edit_recipe', recipe_id=recipe._id)}}">Edit ✎</a>
                          <a class="btn btn-info" href="{{url_for('delete_recipe', recipe_id=recipe._id)}}" onclick="return confirm('Are you sure?')">Delete ✗</a>
                         <a href="{{ url_for('get_recipes') }}" class="btn btn-info">Back</a>
                     </div>
+                    {% endif %}
 
            
             </div> 
@@ -60,6 +62,13 @@
         </div>
       </div>
 </section>
+
+<!--BACK TO TOP -->
+ <div class="row">
+  <div class="col-12">
+    <button onclick="topFunction()" id="myBtn" title="Go to top" class="material-icons">keyboard_arrow_up</button>
+  </div>
+</div>
 
 
 {% endblock %}
