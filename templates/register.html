@@ -1,11 +1,10 @@
 {% extends 'base.html' %} {% block content %}
-<section class="form-light">
 
-  <!--Form without header-->
-  <div class="card">
-
-    <div class="card-body mx-4">
-
+ <section class="page-section cta">
+      <div class="container">  
+        <div class="row">
+          <div class="col-xl-12 mx-auto">      
+            <div class="cta-inner text-left rounded">
       <!--Header-->
       <div class="text-center">
         <h3 class="pink-text mb-5"><strong>Register</strong></h3>
@@ -36,14 +35,13 @@
                                 <label for="password">Password</label>
                             </div>
 
-                       
-        <div class="form-check my-4">
+                            <div class="form-check my-4">
           <input class="form-check-input" type="checkbox" id="defaultCheck12">
           <label for="defaultCheck12" class="grey-text">Accept the<a href="#" class="blue-text"> Terms and
               Conditions</a></label>
         </div>
-      </div>
 
+      
       <!--Grid row-->
       <div class="row d-flex align-items-center mb-4">
 
@@ -58,19 +56,20 @@
           <p class="font-small grey-text d-flex justify-content-end"> Have an account?  <a href="{{ url_for('login') }}"
               class="blue-text ml-1"> Sign In</a></p>
         </div>
-        <!--Grid column-->
-
       </div>
-      <!--Grid row-->
-    </div>
-
-  
-
-  </div>
-  <!--/Form without header-->
-
+          </div>
+          </div>
+        </div>
+      </div>
 </section>
 
+  <!--BACK TO TOP -->
+ <div class="row">
+  <div class="col-12">
+    <button onclick="topFunction()" id="myBtn" title="Go to top" class="material-icons">keyboard_arrow_up</button>
+  </div>
+</div>
 
 
+    
      {% endblock %}

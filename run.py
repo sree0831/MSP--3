@@ -33,7 +33,6 @@ def contact():
     return render_template("contact.html", page_title="Contact")
 
 
-
 #------add recipe------
 @app.route('/add_recipe')
 def add_recipe():
@@ -86,12 +85,6 @@ def get_recipes():
     return render_template("recipes.html", recipes=mongo.db.recipes.find())
 
 
-
-   
-
-    
-    
-
 # -----Edit Recipe------
 
 @app.route('/edit_recipe/<recipe_id>')
@@ -120,7 +113,6 @@ def update_recipe(recipe_id):
     })
     return redirect(url_for('get_recipes'))
 
-    
 
         
 # -----Single Page Recipe------
@@ -143,13 +135,6 @@ def delete_recipe(recipe_id):
         
     mongo.db.recipes.remove({'_id': ObjectId(recipe_id)})
     return redirect(url_for('get_recipes'))
-
-
-
-    
-
-
-
 
 # ----Register--------
 @app.route('/register', methods=['POST', 'GET'])
@@ -215,14 +200,6 @@ def logout():
    
     return redirect(url_for('login'))
 
-
-
-
-
-
-
-
-   
 
 if __name__ == "__main__":
     app.run(
