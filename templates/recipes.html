@@ -24,7 +24,7 @@
                   <div class="card-content">
                     <a href="{{url_for('recipe_single', recipe_id=recipe._id)}}"><span class="card-title">{{recipe.recipe_name}}</span></a>
                     
-                    <a class="btn btn-brown" href="{{url_for('recipe_single', recipe_id=recipe._id)}}"><i class="material-icons btn-icon">import_contacts</i></a>
+                    <a class="btn btn-brown float-right" href="{{url_for('recipe_single', recipe_id=recipe._id)}}"><i class="material-icons btn-icon">import_contacts</i></a>
                     <div class="icon-cook-div"><i class="icon-cook material-icons prefix">timer</i><p class="descript">{{recipe.preparation_time}}</p></div>
   
                   </div>

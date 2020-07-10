@@ -1,20 +1,21 @@
 {% extends 'base.html' %} {% block content %}
 
-
+<section class="page-section cta">
+      <div class="container">  
+        <div class="row">
+          <div class="col-xl-12 mx-auto">      
+            <div class="cta-inner text-left rounded">
     
-<section class="form-gradient mb-5">
 
-<div class="card text-white bg-secondary mb-3">
-    <div class="header peach-gradient">
       <div class="row d-flex justify-content-center">
         <h3 class="white-text mb-0 py-5 font-weight-bold">Edit Recipe</h3>
       </div>
-    </div>
+    
                 
                 <div class="row">
     <form action="{{ url_for('update_recipe', recipe_id=recipe._id) }}" method="POST" class="col s12">
 
-     <div class="card-body mx-4">
+     <div class="w-100">
       <div class="md-form">
       <i class="material-icons prefix grey-text">receipt_long</i>
       <label for="form104"> Recipe Name </label>
