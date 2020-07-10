@@ -6,7 +6,7 @@
       <div class="container">  
         <div class="row">
           <div class="col-xl-12 mx-auto">      
-            <div class="cta-inner text-center rounded">
+            <div class="cta-inner text-left rounded">
               {% with messages = get_flashed_messages() %} {% if messages %}
         <ul class="flashes">
             {% for message in messages %}
@@ -15,7 +15,7 @@
         </ul>
         {% endif %} {% endwith %}
                <div class="heading-section ftco-animate mb-5">
-		            <h2 class="mb-4">Make A Reservation</h2>
+		            <h2 class="mb-4 text-center">Make A Reservation</h2>
 		          </div>
 	            <form method="POST" name="sentMessage" id="contactForm">
 	              <div class="row">
@@ -39,8 +39,10 @@
 	                </div>
 	                <div class="col-md-6">
 	                  <div class="form-group">
+                      
 	                    <label for="">Date</label>
 	                    <input type="text" class="form-control" class="datepicker" id="book_date" placeholder="Date" name="date" id="date" required data-validation-required-message="Please enter your prefered date.">
+                        
 	                  </div>
 	                </div>
 
@@ -67,10 +69,10 @@
 	                    </div>
 	                  </div>
 	                </div>
-	                <div class="col-xl-9 mx-auto">
-	                  <div class="form-group">
-	                    <input type="submit" value="Make a Reservation" class="btn btn-primary btn-lg">
-	                  </div>
+	                <div class="col-md-12 ">
+	                 
+	                    <input type="submit" value="Make a Reservation" class="btn btn-primary btn-lg float-right">
+	                  
 	                </div>
 	              </div>
 	            </form>

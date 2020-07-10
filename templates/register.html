@@ -23,7 +23,8 @@
                             <div class="md-form">
                                 <input type="text" id="email" class="form-control"  name="email" required >
                                 {% if error == 'user_exists' %}
-                                    <span class="existing-email">That email address already exists.</span>
+                                   
+                                    <span style="color: red;">This email already exists.</span>
                                 {% endif %}
                                  <i class="material-icons prefix">email</i>
                                 <label for="email">Email</label>

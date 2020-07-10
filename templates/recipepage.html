@@ -14,7 +14,8 @@
             
                     <div class="card-content">
                         <span><a href="{{url_for('recipe_single', recipe_id=recipe._id)}}"
-                                        class="recipe-title-text card-title-recipep">{{recipe.recipe_name}}</a></span>  
+                                        class="recipe-title-text card-title-recipep">{{recipe.recipe_name}}</a></span>
+                                          
                         <div class="icon-cook-div"><i class="icon-cook material-icons prefix">timer</i><p class="descript">Preparation Time: {{recipe.preparation_time}}</p></div>
                         <button onclick="window.print()" class="btn btn-light no-print">Print <i class="material-icons">print</i></button> 
                         <li class="divider"></li>
