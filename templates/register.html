@@ -1,5 +1,5 @@
 {% extends 'base.html' %} {% block content %}
-
+<!--page header-->
  <section class="page-section cta">
       <div class="container">  
         <div class="row">
@@ -45,13 +45,11 @@
       <!--Grid row-->
       <div class="row d-flex align-items-center mb-4">
 
-        <!--Grid column-->
+        <!--button-->
         <div class="col-md-3 col-md-6 text-center">
           <input type="submit" value="Register" class="btn btn-brown btn-block btn-rounded z-depth-1">
         </div>
-        <!--Grid column-->
-
-        <!--Grid column-->
+        <!--sign in link-->
         <div class="col-md-6">
           <p class="font-small grey-text d-flex justify-content-end"> Have an account?  <a href="{{ url_for('login') }}"
               class="blue-text ml-1"> Sign In</a></p>

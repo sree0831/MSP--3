@@ -2,20 +2,22 @@
 <html lang="en">
 
 <head>
-
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+<!-- Required meta tags -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Tasty Things</title>
+ <!-- Bootstrap CSS -->
      <link href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
 
     <link rel="stylesheet" href="{{ url_for('static', filename='css/business-casual.min.css') }}" type="text/css" />
-
+<!-- Custom CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css" />
-    
+ <!--material icons-->   
      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-    
-    
+   
 </head>
 
 <body>
@@ -78,7 +80,7 @@
           {% endblock %}
     </div>
   </section>
-
+<!--footer-->
   <footer class="footer text-faded text-center py-5">
     <div class="container">
       <p class="m-0 small">Copyright &copy; Tasty Things 2020</p>
@@ -86,10 +88,12 @@
   </footer>
 
   <!-- Bootstrap core JavaScript -->
-
+ <!-- Custom scripts -->
     <script src="{{ url_for('static', filename='vendor/jquery/script.js')}}"></script>
+      <!-- Bootstrap core JavaScript -->
     <script src="{{ url_for('static', filename='vendor/jquery/jquery.min.js') }}"></script>
     <script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 
 

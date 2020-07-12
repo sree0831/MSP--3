@@ -1,74 +1,74 @@
 {% extends 'base.html' %} {% block content %}
 
-
+<!--page header-->
 <section class="page-section cta">
-      <div class="container">  
-        <div class="row">
-          <div class="col-md-6-auto">      
-            <div class="cta-inner text-center rounded">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6-auto">
+				<div class="cta-inner text-center rounded">
 
-    <div class="row">
-        <div class="col-md-12">
-            <div class="card card-single-recipe">
-            {% for recipe in recipes %}
-            
-                    <div class="card-content">
-                        <span><a href="{{url_for('recipe_single', recipe_id=recipe._id)}}"
+					<div class="row">
+						<div class="col-md-12">
+							<div class="card card-single-recipe">
+								{% for recipe in recipes %}
+								<!--content-->
+								<div class="card-content">
+									<span><a href="{{url_for('recipe_single', recipe_id=recipe._id)}}"
                                         class="recipe-title-text card-title-recipep">{{recipe.recipe_name}}</a></span>
-                                          
-                        <div class="icon-cook-div"><i class="icon-cook material-icons prefix">timer</i><p class="descript">Preparation Time: {{recipe.preparation_time}}</p></div>
-                        <button onclick="window.print()" class="btn btn-light no-print">Print <i class="material-icons">print</i></button> 
-                        <li class="divider"></li>
-                        <br>
-                        <p>{{recipe.recipe_intro}}</p><br>                        
-                    </div>
-                    
-                    <div class="card-image responsive-img">
-                    <img src="{{recipe.photo_url}}" class="img-fluid" alt="Responsive image">
-                    </div>
-                    
-                    
-                    <div>
-                      <div class="card-content ingredients-box">
-                           <strong>Ingredients: </strong>
-                           <li class="divider"></li>
-                           <br>
-                           <p> {{recipe.ingredients}} </p> 
-                      </div> 
-                    </div>
-                    
-                    <div class="card-content">
-                         <strong>How to Make it: </strong>
-                         <li class="divider"></li>
-                         <br> 
-                         <p>{{recipe.description}}</p>                       
-                    </div>
+									<div class="icon-cook-div"><i class="icon-cook material-icons prefix">timer</i>
+										<p class="descript">Preparation Time: {{recipe.preparation_time}}</p>
+									</div>
+									<button onclick="window.print()" class="btn btn-light no-print">Print <i class="material-icons">print</i></button>
+									<li class="divider"></li>
+									<br>
+									<p>{{recipe.recipe_intro}}</p><br>
+                                     </div>
+									<!--image-->
+									<div class="card-image responsive-img">
+										<img src="{{recipe.photo_url}}" class="img-fluid" alt="Responsive image">
+                                    </div>
+										<!--ingred-->
+										<div>
+											<div class="card-content ingredients-box">
+												<strong>Ingredients: </strong>
+												<li class="divider"></li>
+												<br>
+												<p> {{recipe.ingredients}} </p>
+											</div>
+										</div>
+										<!--method-->
+										<div class="card-content">
+											<strong>How to Make it: </strong>
+											<li class="divider"></li>
+											<br>
+											<p>{{recipe.description}}</p>
+										</div>
 
-                     {% if session.username == recipe.recipe_id %}  
-                    <div class="card-content red lighten-5 links-botton-card">
-                        <a class="btn btn-info" href="{{url_for('edit_recipe', recipe_id=recipe._id)}}">Edit ✎</a>
-                         <a class="btn btn-info" href="{{url_for('delete_recipe', recipe_id=recipe._id)}}" onclick="return confirm('Are you sure?')">Delete ✗</a>
-                        <a href="{{ url_for('get_recipes') }}" class="btn btn-info">Back</a>
-                    </div>
-                    {% endif %}
-
-           
-            </div> 
-            {% endfor %}
-        </div>
-    </div>
-  </div>
-            </div>
-          </div>
-        </div>
-      </div>
+										<!--submit buttons-->
+										<div class="card-content red lighten-5 links-botton-card">
+											<a class="btn btn-info "
+												href="{{url_for('edit_recipe', recipe_id=recipe._id)}}">Edit ✎</a>
+											<a class="btn btn-danger "
+												href="{{url_for('delete_recipe', recipe_id=recipe._id)}}"
+												onclick="return confirm('Are you sure?')">Delete ✗</a>
+											<a href="{{ url_for('get_recipes') }}" class="btn btn-success">Back</a>
+										</div>
+									</div>
+									{% endfor %}
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 </section>
 
 <!--BACK TO TOP -->
- <div class="row">
-  <div class="col-12">
-    <button onclick="topFunction()" id="myBtn" title="Go to top" class="material-icons">keyboard_arrow_up</button>
-  </div>
+<div class="row">
+	<div class="col-12">
+		<button onclick="topFunction()" id="myBtn" title="Go to top" class="material-icons">keyboard_arrow_up</button>
+	</div>
 </div>
 
 

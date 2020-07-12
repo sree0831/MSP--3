@@ -1,86 +1,80 @@
 {% extends 'base.html' %} {% block content %}
-
+<!-- PAGE HEADER -->
 <section class="page-section cta">
-      <div class="container">  
-        <div class="row">
-          <div class="col-xl-12 mx-auto">      
-            <div class="cta-inner text-left rounded">
-    
+	<div class="container">
+		<div class="row">
+			<div class="col-xl-12 mx-auto">
+				<div class="cta-inner text-left rounded">
+					<!-- PAGE CONTENT -->
+					<div class="row d-flex justify-content-center">
+						<h3 class="white-text mb-0 py-5 font-weight-bold">Edit Recipe</h3>
+					</div>
+					<div class="row">
+						<!-- EDIT RECIPES FORM-->
+						<form action="{{ url_for('update_recipe', recipe_id=recipe._id) }}" method="POST"
+							class="col s12">
 
-      <div class="row d-flex justify-content-center">
-        <h3 class="white-text mb-0 py-5 font-weight-bold">Edit Recipe</h3>
-      </div>
-    
-                
-                <div class="row">
-    <form action="{{ url_for('update_recipe', recipe_id=recipe._id) }}" method="POST" class="col s12">
-
-     <div class="w-100">
-      <div class="md-form">
-      <i class="material-icons prefix grey-text">receipt_long</i>
-      <label for="form104"> Recipe Name </label>
-       <input id="recipe_name" name="recipe_name" type="text"  id="form104" class="form-control" placeholder="Recipe name" class="validate" value="{{recipe.recipe_name}}">    
-      </div>
-
-
-      <div class="md-form">
-      <i class="material-icons prefix grey-text">comment</i>
-         <label for="form105"> Intro </label>
-        <input type="text" id="form105" class="form-control" id="recipe_intro" name="recipe_intro"placeholder="About Recipe" class="validate" value="{{recipe.recipe_intro}}">
-      </div>
+							<div class="w-100">
+								<!-- EDIT NAME -->
+								<div class="md-form">
+									<i class="material-icons prefix grey-text">receipt_long</i>
+									<label for="form104"> Recipe Name </label>
+									<input id="recipe_name" name="recipe_name" type="text"  id="form104" class="form-control" placeholder="Recipe name" class="validate" value="{{recipe.recipe_name}}">
+                                </div>
+                                <!--EDIT INTRO-->
 
 
-      <div class="md-form">
-      <i class="material-icons prefix grey-text">format_list_bulleted</i>
-         <label for="form106"> Ingredients </label>
-        <input type="text" id="form106" class=" form-control" rows="5"  id="ingredients" name="ingredients"placeholder="Add Ingredients" class="validate" value="{{recipe.ingredients}}">
-      </div>
-
-
-      <div class="md-form">
-        <i class="material-icons prefix grey-text">local_pizza</i>
-        <label for="form107"> How to Make it? </label>
-          <input type="text" id="form107" class=" form-control" rows="5"  id="idescription" name="description" placeholder="Add Steps" class="validate" value="{{recipe.description}}">
-      </div>
-
-
-      <div class="md-form">
-        <i class="material-icons prefix grey-text">access_time</i>
-         <label for="form108"> Preparation Time </label>
-        <input  id="form108" class="form-control" id="preparation_time" name="preparation_time" type="text" placeholder="(mins)" required min=1  class="validate" value="{{recipe.preparation_time}}">
-      </div>
-
-
-      <div class="md-form">
-        <i class="material-icons prefix grey-text">local_see</i>
-         <label for="form109"> Photo URL </label>
-        <input  id="form109" class="form-control" id="photo_url" name="photo_url" type="url"  placeholder="Image URL" class="validate" value="{{recipe.photo_url}}">
-      </div>
-
-   
-        
-        <div class="col-md-12 mt-3">
-            <button class="btn waves-effect deep-orange lighten-2" type="submit" name="action">Save Recipe
-                <i class="material-icons right">local_dining</i>
-             </button>
-             
-             <a href="{{ url_for('get_recipes') }}" class="waves-effect waves-light btn grey">
-             <i class="material-icons right">cancel</i>Cancel</a>
-        </div>
-        
-      </div>
-    </form>
-  </div>
- </div>
-</div>
+									<div class="md-form">
+										<i class="material-icons prefix grey-text">comment</i>
+										<label for="form105"> Intro </label>
+										<input type="text" id="form105" class="form-control" id="recipe_intro" name="recipe_intro"placeholder="About Recipe" class="validate" value="{{recipe.recipe_intro}}">
+                                     </div>
+                                     <!--EDIT INGRE-->
+										<div class="md-form">
+											<i class="material-icons prefix grey-text">format_list_bulleted</i>
+											<label for="form106"> Ingredients </label>
+											<input type="text" id="form106" class=" form-control" rows="5"  id="ingredients" name="ingredients"placeholder="Add Ingredients" class="validate" value="{{recipe.ingredients}}">
+                                        </div>
+                                        <!--EDIT MAKING-->
+											<div class="md-form">
+												<i class="material-icons prefix grey-text">local_pizza</i>
+												<label for="form107"> How to Make it? </label>
+												<input type="text" id="form107" class=" form-control" rows="5"  id="idescription" name="description" placeholder="Add Steps" class="validate" value="{{recipe.description}}">
+                                             </div>
+                                             <!--EDIT PREP-->
+												<div class="md-form">
+													<i class="material-icons prefix grey-text">access_time</i>
+													<label for="form108"> Preparation Time </label>
+													<input  id="form108" class="form-control" id="preparation_time" name="preparation_time" type="text" placeholder="(mins)" required min=1  class="validate" value="{{recipe.preparation_time}}">
+                                                </div>
+                                                <!-- EDIT IMAGE -->
+													<div class="md-form">
+														<i class="material-icons prefix grey-text">local_see</i>
+														<label for="form109"> Photo URL </label>
+														<input  id="form109" class="form-control" id="photo_url" name="photo_url" type="url"  placeholder="Image URL" class="validate" value="{{recipe.photo_url}}">
+                                                    </div>
+                                                    <!--BUTTON-->
+														<div class="col-md-12 mt-3">
+															<button class="btn waves-effect deep-orange lighten-2" type="submit" name="action">Save Recipe
+                                                          <i class="material-icons right">local_dining</i>
+                                                          </button>
+															<a href="{{ url_for('get_recipes') }}"
+																class="waves-effect waves-light btn grey">
+																<i class="material-icons right">cancel</i>Cancel</a>
+														</div>
+													</div>
+						</form>
+					</div>
+				</div>
+			</div>
 </section>
 
 
 <!--BACK TO TOP -->
- <div class="row">
-  <div class="col-12">
-    <button onclick="topFunction()" id="myBtn" title="Go to top" class="material-icons">keyboard_arrow_up</button>
-  </div>
+<div class="row">
+	<div class="col-12">
+		<button onclick="topFunction()" id="myBtn" title="Go to top" class="material-icons">keyboard_arrow_up</button>
+	</div>
 </div>
 
 

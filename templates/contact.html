@@ -1,7 +1,7 @@
 {% extends 'base.html' %} {% block content %}
 
 
-
+<!-- PAGE HEADER -->
  <section class="page-section cta">
       <div class="container">  
         <div class="row">
@@ -17,6 +17,7 @@
                <div class="heading-section ftco-animate mb-5">
 		            <h2 class="mb-4 text-center">Make A Reservation</h2>
 		          </div>
+                   <!-- ADD RECIPES FORM-->
 	            <form method="POST" name="sentMessage" id="contactForm">
 	              <div class="row">
 	                <div class="col-md-6">
@@ -37,9 +38,9 @@
 	                    <input type="tel" class="form-control" placeholder="Phone Number" name="number" id="phone" required data-validation-required-message="Please enter your phone number.">
 	                  </div>
 	                </div>
+
 	                <div class="col-md-6">
 	                  <div class="form-group">
-                      
 	                    <label for="">Date</label>
 	                    <input type="text" class="form-control" class="datepicker" id="book_date" placeholder="Date" name="date" id="date" required data-validation-required-message="Please enter your prefered date.">
                         
@@ -53,7 +54,6 @@
 	                  </div>
 	                </div>
 
-       
 	                <div class="col-md-6">
 	                  <div class="form-group">
 	                    <label for="">Persons</label>
@@ -69,10 +69,9 @@
 	                    </div>
 	                  </div>
 	                </div>
-	                <div class="col-md-12 ">
-	                 
-	                    <input type="submit" value="Make a Reservation" class="btn btn-primary btn-lg float-right">
-	                  
+                    <!--BUTTON-->
+	                <div class= "col-md-12">
+	                   <input type="submit" value="Make a Reservation" class="btn btn-primary btn-lg btn-block "> 
 	                </div>
 	              </div>
 	            </form>
@@ -83,7 +82,7 @@
         </div>
       </div>
     </section>
-
+<!--about -->
      <section class="page-section cta">
       <div class="container">
         <div class="row">
