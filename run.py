@@ -104,6 +104,7 @@ def update_recipe(recipe_id):
     recipes.update( {'_id': ObjectId(recipe_id)},
     {
         'recipe_name':request.form.get('recipe_name'),
+        'author':request.form.get('author'),
         'recipe_intro':request.form.get('recipe_intro'),
         'ingredients': request.form.get('ingredients'),
         'description': request.form.get('description'),
@@ -189,7 +190,7 @@ def login():
 
     return render_template('login.html', title='Login | Tasty Things', user=user)
 
-
+#--signout ---
 
 @app.route('/logout')
 def logout():

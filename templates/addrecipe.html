@@ -1,91 +1,92 @@
 {% extends 'base.html' %} {% block content %}
 
 <!-- PAGE HEADER -->
- <section class="page-section cta">
-      <div class="container">  
-        <div class="row">
-          <div class="col-xl-12 mx-auto">      
-            <div class="cta-inner text-left rounded">
+<section class="page-section cta">
+	<div class="container">
+		<div class="row">
+			<div class="col-xl-12 mx-auto">
+				<div class="cta-inner text-left rounded">
+					<div class="row d-flex justify-content-center">
+						<h3 class="white-text-center mb-0 py-5 font-weight-bold">Add Recipe</h3>
+					</div>
+					<!-- PAGE CONTENT -->
+					<form action="{{ url_for('insert_recipe') }}" method="POST" class="col s12">
+						<!-- ADD RECIPES FORM-->
+						<div class="w-100">
+							<!-- NAME -->
+							<div class="md-form">
+								<i class="material-icons prefix grey-text">receipt_long</i>
+								<label for="form104"> Recipe Name </label>
+								<input id="recipe_name" name="recipe_name" type="text"  id="form104" class="form-control" placeholder="Recipe name">
+                                </div>
+								<!--author-->
+								<div class="md-form">
+									<i class="material-icons prefix grey-text">create</i>
+									<label for="form104"> Author </label>
+									<input id="author" name="author" type="text"  id="form104" class="form-control" placeholder="author">
+                                    </div>
+									<!-- DESCRIPTION -->
+									<div class="md-form">
+										<i class="material-icons prefix grey-text">comment</i>
+										<label for="form105"> Intro </label>
+										<input type="text" id="form105" class="form-control" id="recipe_intro" name="recipe_intro"placeholder="About Recipe">
+                                        </div>
 
-      <div class="row d-flex justify-content-center">
-        <h3 class="white-text-center mb-0 py-5 font-weight-bold">Add  Recipe</h3>
-      </div>
-    
+										<!-- MAIN INGREDIENT -->
 
-<!-- PAGE CONTENT -->
-    <form action="{{ url_for('insert_recipe') }}" method="POST" class="col s12"> 
-  <!-- ADD RECIPES FORM-->
-    <div class="w-100">
-<!-- NAME -->
-      <div class="md-form">
-      <i class="material-icons prefix grey-text">receipt_long</i>
-      <label for="form104"> Recipe Name </label>
-       <input id="recipe_name" name="recipe_name" type="text"  id="form104" class="form-control" placeholder="Recipe name"> 
-      </div>
-<!-- DESCRIPTION -->
-      <div class="md-form">
-      <i class="material-icons prefix grey-text">comment</i>
-         <label for="form105"> Intro </label>
-        <input type="text" id="form105" class="form-control" id="recipe_intro" name="recipe_intro"placeholder="About Recipe">
-      </div>
-
-   <!-- MAIN INGREDIENT -->    
-
-      <div class="md-form">
-      <i class="material-icons prefix grey-text">format_list_bulleted</i>
-         <label for="form106"> Ingredients </label>
-        <textarea id="form106" class="md-textarea right form-control" rows="5"  id="ingredients" name="ingredients"placeholder="Add Ingredients"></textarea>
-      </div>
-
-         
- <!-- INSTRUCTIONS -->
-      <div class="md-form">
-        <i class="material-icons prefix grey-text">local_pizza</i>
-        <label for="form107"> How to Make it? </label>
-          <textarea id="form107" class="md-textarea right form-control" rows="5"  id="idescription" name="description" placeholder="Add Steps"></textarea>
-      </div>
- <!-- PREP TIME -->
-      <div class="md-form">
-        <i class="material-icons prefix grey-text">access_time</i>
-         <label for="form108"> Preparation Time </label>
-        <input  id="form108" class="form-control" id="preparation_time" name="preparation_time" type="number" placeholder="(mins)" required min=1>
-      </div>
-<!-- IMAGE -->
-      <div class="md-form">
-        <i class="material-icons prefix grey-text">local_see</i>
-         <label for="form109"> Photo URL </label>
-        <input  id="form109" class="form-control" id="photo_url" name="photo_url" type="url"  placeholder="Image URL">
-      </div>
+										<div class="md-form">
+											<i class="material-icons prefix grey-text">format_list_bulleted</i>
+											<label for="form106"> Ingredients </label>
+											<textarea id="form106" class="md-textarea right form-control" rows="5"  id="ingredients" name="ingredients"placeholder="Add Ingredients"></textarea>
+										</div>
+										<!-- INSTRUCTIONS -->
+										<div class="md-form">
+											<i class="material-icons prefix grey-text">local_pizza</i>
+											<label for="form107"> How to Make it? </label>
+											<textarea id="form107" class="md-textarea right form-control" rows="5"  id="idescription" name="description" placeholder="Add Steps"></textarea>
+										</div>
+										<!-- PREP TIME -->
+										<div class="md-form">
+											<i class="material-icons prefix grey-text">access_time</i>
+											<label for="form108"> Preparation Time </label>
+											<input  id="form108" class="form-control" id="preparation_time" name="preparation_time" type="number" placeholder="(mins)" required min=1>
+                                            </div>
+											<!-- IMAGE -->
+											<div class="md-form">
+												<i class="material-icons prefix grey-text">local_see</i>
+												<label for="form109"> Photo URL </label>
+												<input  id="form109" class="form-control" id="photo_url" name="photo_url" type="url"  placeholder="Image URL">
+                                                </div>
 
 
-   <!-- BUTTONS -->
-      <div class="row d-flex align-items-center mb-3 mt-4">
+												<!-- BUTTONS -->
+												<div class="row d-flex align-items-center mb-3 mt-4">
 
-        <!--Grid column-->
-        <div class="col-md-12 mt-3">
-            <div class="text-center">
-            <button class="btn waves-effect deep-orange lighten-2 btn_add_recipe" type="submit" name="action">Add New Recipe
-                <i class="material-icons right">local_dining</i>
-             </button>
-            </div>
-        </div>
+													<!--Grid column-->
+													<div class="col-md-12 mt-3">
+														<div class="text-center">
+															<button class="btn waves-effect deep-orange lighten-2 btn_add_recipe" type="submit" name="action">Add New Recipe
+                                                            <i class="material-icons right">local_dining</i>
+                                                             </button>
+														</div>
+													</div>
 
-      </div>
-    </div>
-</div>
-</form>
-        </div>
-        </div>
-      </div>
-      </div>
- </section>
-  
+												</div>
+											</div>
+										</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
 
 <!--BACK TO TOP -->
- <div class="row">
-  <div class="col-12">
-    <button onclick="topFunction()" id="myBtn" title="Go to top" class="material-icons">keyboard_arrow_up</button>
-  </div>
+<div class="row">
+	<div class="col-12">
+		<button onclick="topFunction()" id="myBtn" title="Go to top" class="material-icons">keyboard_arrow_up</button>
+	</div>
 </div>
 
 {% endblock %}
