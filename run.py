@@ -198,8 +198,9 @@ def logout():
     session['email'] = None
     session['name'] = None
     # session.clear()
-   
-    return redirect(url_for('login'))
+     # success message to users
+    flash("You are logged out", 'success')
+    return redirect(url_for('index'))
 
 
 if __name__ == "__main__":
