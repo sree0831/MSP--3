@@ -4,6 +4,7 @@ import math
 from flask import Flask, render_template, request, flash ,redirect ,url_for, session
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId 
+ 
 
 if os.path.exists("env.py"):
     import env
@@ -201,6 +202,22 @@ def logout():
      # success message to users
     flash("You are logged out", 'success')
     return redirect(url_for('index'))
+
+
+# Error handling suggested  on YouTube
+@app.errorhandler(404)
+def page_not_found(error):
+    # 404 error is redirected to 404.html
+    return render_template('404.html')
+
+
+@app.errorhandler(500)
+def internal_error(error):
+    # 500 error is redirected to 500.html
+    session.pop('_flashes', None)
+    session.pop('username', None)
+    return render_template('500.html')
+
 
 
 if __name__ == "__main__":
