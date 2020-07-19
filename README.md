@@ -23,25 +23,27 @@
 1. [About](#About)
 
     - [Goal](#Goal)
+    -   [Strategy Plane](#strategy)
+    -   [Project Charter](#charter)
+    -   [Defensive Design](#def)
 
 2. [UX](#UX)
 
     - [Layout Pro](#Layout-Pro-Boundless-Adaptability)
     - [Layout Con](#Layout-Con-Moderate-Speed-and-Execution)
-    - [Additional Note](#Additional-Note)
     - [template style](#template-Style)
     - [Navigation](#Navigation)
     - [Database Structure](#Database-Structure)
+    -  [Wireframes](#wireframes)
+        
 
 3. [Technologies](#Technologies)
 
     - [Languages Frameworks Tools](#Languages-Frameworks-Tools)
     - [Other-Resources](#Other-Resources)
-
     - [Features](#Features)
 
-    - [Existing Features](#Existing-Features)
-    - [Features-Left-to-Implement](#Features-Left-to-Implement)
+
 
 4. [Testing](#Testing)
 
@@ -74,6 +76,28 @@ This application uses Python on the back-end with the Flask web framework, and u
 Built for Milestone Project no.3 in the Full Stack Software Development at Code Institute, in the Data Centric Development module.
 
 The core focus of this project is on functional app logic created with **Python** while utilising the **Flask** framework and **MongoDB** NoSQL database.
+# Strategy Plane
+The overall aim of the project is to create a web application that allows users to store and easily access cooking recipes. The logic of the app will be written using a variety of technologies but predominantly using the Python Flask micro framework, jQuery and MongoDB.  HTML, CSS, and JavaScript will be used to enhance the look and feel of the application. 
+## Project Charter 
+||Objectives |
+|:---|:---|
+|**Purpose:** What purpose does the website serve?|The web application allows users to store and easily access cooking recipes|
+|**Goals:** What outcomes does it need to achieve?|<ul><li>allow users to store and easily access cooking recipes </li><li>editing and </li><li>deleting of recipes</li><li>group and summarise the recipes</li></ul>
+|**Target audience:** Whom must the product appeal to and work for?|<ul><li>Casual cooks just browsing for an easy recipe </li><li>Cooking hobbyists</li><li>Professional and semi-professional cooks</li></ul>|
+|**Success indicators:** How will you know you have achieved project goals?|A steady increase in the number of recipes added by users would be a clear indication of the success of the application|
+|**Strategies:** What approaches will help to realise the goals?|<ul><li>We will take a mobile first approach to Content</li><li>Provide useful, interesting and focused content for our target audience</li><li>Aim to keep the site simple and not over complicated</li><li>Present content in a clear and user-friendly way</li></ul>
+|**Tactics:** What activities might help to realise the strategies?|<ul><li>Provide useful and relevant content to users</li><li>Provide a user experience that is accessible and enjoyable for all visitors</li><ul><li>following conventions for design and interaction</li><li>providing clear and consistent navigation</li></ul></ul>
+
+## Defensive Design
+Defensive design for our Cookbook application will focus on the most common points of failure: user input areas, feedback and server problems.
+*	I will employ form validation to check for user 
+*	I will protect users from server errors and broken links with informative messages
+*	My Defensive design will assist the user before mistakes happen.
+
+The user will be informed if that username has already been taken and asked to enter a different username. The form will have validation and offer clear instructions to users on how to proceed.
+Environmental variables have been used to protect access details to the database.
+Development was done using a local database, and the Heroku hosted app connects to an mLab database. Heroku environmental variables hide the database name, the username and password.
+
 ## UX
  
 This application was built to allow users create and share recipes, as well as updating and deleting them as necessary. The application provides a registration page for new users to register on the site, a log in page to sign in after they have registered and a contact page where users can book a table.
@@ -127,6 +151,25 @@ As a recipe document is created in the recipes collection, the author of the rec
 "email":"",
 "password":""}
 ```
+
+##  Wireframes
+
+## Home Page (‘/’ index.html)<a id="homewf"></a>
+![start application](static/img/home.jpg)
+
+## Register Page (‘/register  register.html)<a id="signwf"></a>
+![application page](static/img/register.jpg)
+
+## myrecipes (‘/recipes recipes.html)<a id="mywf"></a>
+![leaderboard](static/img/recipes.jpg)
+
+## Add Recipe (/add_recipe add_recipe.html) <a id="addwf"></a>
+![leaderboard](static/img/recipe.jpg)
+
+## Edit Recipe (/edit_recipe edit_recipe.html) <a id="addwf"></a>
+![leaderboard](static/img/edit.jpg)
+
+
 ## Technologies
 
 #### Languages, Libraries & Frameworks
@@ -165,7 +208,67 @@ As a recipe document is created in the recipes collection, the author of the rec
 
 
 
-  #### Other Resources
+#### Other Resources
 
 - [w3schools](https://www.w3schools.com/)
 - [Slack](https://slack.com/)
+
+####  Features
+
+- Home Page
+
+<br>
+  <img src="static/img/home1.PNG" width="600">
+  <br>
+
+  - It is used to access the  add recipe page field which leads the user to login page with little description about the site .
+
+- Sign Up
+
+
+  - I have used for a user to register for an account so they can log in into the app.
+
+- Sign In
+
+  - Used for a user to login to the app so to access and utilise all available features.
+
+- MongoDB (NoSQL Database)
+
+  - Stores recipe and user objects.
+
+- Add recipe Page
+
+<br>
+  <img src="static/img/add.PNG" width="600">
+  <br>
+  - It is applied for a user to create/ add recipe data.
+
+- Edit Page
+
+<br>
+  <img src="static/img/edit1.PNG" width="600">
+  <br>
+
+  <br>
+  <img src="static/img/edit2.PNG" width="600">
+  <br>
+
+  <br>
+  <img src="static/img/edit3.PNG" width="600">
+  <br>
+  - For user to update and delete their own recipe data.
+
+
+- Recipe Page
+
+ <br>
+  <img src="static/img/single.PNG" width="600">
+  <br>
+  - Allows a  user to read  recipe within the app.
+
+- Contact Page
+
+<br>
+  <img src="static/img/contact.PNG" width="600">
+  <br>
+  - Allows a user to book a table and see Contact details .
