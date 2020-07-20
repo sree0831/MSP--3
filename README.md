@@ -14,7 +14,7 @@
 - [Live link](http://tasty-and-things.herokuapp.com/)
 - [Github Link](https://github.com/sree0831/MSP-3.git)
 <hr><hr>
-<a id="top"></a>
+
 
 ## Table of Contents
 
@@ -50,18 +50,15 @@
     - [Tools-and-Methods-Used-for-Testing](#Tools-and-Methods-Used-for-Testing)
     - [Tested Sections 1 HTML & CSS](#Tested-Sections-1-HTML-&-CSS)
     - [Tested Sections 2 Python](#Tested-Sections-2-Python)
-    - [Unresolved Bugs](#Unresolved-Bugs)
+    
 
 5. [Deployment](#Deployment)
 
     - [How the project got deployed to Heroku](#How-the-project-got-deployed-to-Heroku)
-    - [Cloning the repository](#Cloning-the-repository)
     - [How to access the live application](#How-to-access-the-live-application)
-    - [How to run things locally](#How-to-run-things-locally)
 
 6. [Credits](#Credits)
-7. [Content](#Content)
-8. [Acknowledgements](#Acknowledgements)
+
     <!--te-->
 ## About
 
@@ -97,6 +94,7 @@ Defensive design for our Cookbook application will focus on the most common poin
 The user will be informed if that username has already been taken and asked to enter a different username. The form will have validation and offer clear instructions to users on how to proceed.
 Environmental variables have been used to protect access details to the database.
 Development was done using a local database, and the Heroku hosted app connects to an mLab database. Heroku environmental variables hide the database name, the username and password.
+<hr><hr>
 
 ## UX
  
@@ -105,12 +103,13 @@ As a user I can:
 - register as a user on the site
 - log in to the site once registered
 - add new recipes to the site (when logged in)
+- user with same user and author name can view features of edit and delete in recipes page.(when logged in)
 - edit recipes I create on the site (when logged in)
 - delete any recipes I created on the site (when logged in)
 - view a list of recipes stored on the site
 - click on a recipe to see information about the recipe
 - read the method for preparing the recipe
-- book a table in our restaurant
+- book a table in our restaurant and can plan a visit .
 
 
 #### Layout Pro 
@@ -211,39 +210,55 @@ As a recipe document is created in the recipes collection, the author of the rec
 #### Other Resources
 
 - [w3schools](https://www.w3schools.com/)
+- [CodeInstitute](https://codeinstitute.net/)
 - [Slack](https://slack.com/)
-
+<hr><hr>
 ####  Features
 
-- Home Page
+1. Home Page
 
 <br>
   <img src="static/img/home1.PNG" width="600">
   <br>
 
   - It is used to access the  add recipe page field which leads the user to login page with little description about the site .
+<hr><hr>
 
-- Sign Up
+ 2. Sign Up
 
 
   - I have used for a user to register for an account so they can log in into the app.
 
-- Sign In
+3. Sign In
 
   - Used for a user to login to the app so to access and utilise all available features.
 
-- MongoDB (NoSQL Database)
+4. MongoDB (NoSQL Database)
 
   - Stores recipe and user objects.
+<hr><hr>
 
-- Add recipe Page
+5. Add recipe Page
 
 <br>
   <img src="static/img/add.PNG" width="600">
   <br>
-  - It is applied for a user to create/ add recipe data.
 
-- Edit Page
+  - It is applied for a registered user to create/ add recipe data.
+<hr><hr>
+
+6. Recipes Page
+
+ <br>
+  <img src="static/img/res.PNG" width="600">
+  <br>
+
+  - Allows a  user to read  recipe within the app.
+
+  - Users who created  recipes with  author name same as user name  can see edit and delete feautures in recipe page.
+<hr><hr>
+
+7. Edit Page
 
 <br>
   <img src="static/img/edit1.PNG" width="600">
@@ -257,18 +272,149 @@ As a recipe document is created in the recipes collection, the author of the rec
   <img src="static/img/edit3.PNG" width="600">
   <br>
   - For user to update and delete their own recipe data.
+  - Only user who created recipes with same author name can view edit and delete features .
+<hr><hr>
 
-
-- Recipe Page
+8. single Recipe Page
 
  <br>
   <img src="static/img/single.PNG" width="600">
   <br>
-  - Allows a  user to read  recipe within the app.
 
-- Contact Page
+  - Allows a  user to read  recipe within the app.
+  - users with same author name can view options for update and delete.
+
+<hr><hr>
+
+9. Contact Page
 
 <br>
   <img src="static/img/contact.PNG" width="600">
   <br>
+
   - Allows a user to book a table and see Contact details .
+<hr><hr>
+
+10. [Error 404 Page](/app/templates/error404.html)
+-  Comprises a custom page not found error.
+
+11. [Error 500 Page](/app/templates/error500.html)
+-  Comprises a custom server error.
+14. [Base Template](/app/templates/base.html)
+* Includes all the scripts and css files that have been used for the construction of the other templates.
+
+
+## Testing
+
+#### Tools and Methods Used for Testing
+
+- HTML
+
+  - [Freeformatter](https://www.freeformatter.com/)
+
+  - [The W3C Markup Validation Service](https://validator.w3.org/)
+
+- CSS
+
+  - [The W3C Markup Validation Service](https://jigsaw.w3.org/css-validator)
+
+- Python
+
+  - [Python Formatter](https://pythoniter.appspot.com/)
+
+- Phones
+
+  - Galaxy Note 3 (simulation and actual device)
+  - Galaxy Note 9
+  - Galaxy S5
+  - Galaxy S9/S9+
+  - iPhone 5/SE
+  - iPhone 6/7/8 (simulated and real device)
+  - iPhone 6/7/8 Plus
+  - iPhone X
+  - LG Optimus L70
+  - Microsoft Lumia 550
+  - Microsoft Lumia 950
+  - Nexus 5X
+  - Nexus 6P
+  - Nokia 8110 4G
+  - Pixel 2
+  - Pixel 2 XL
+
+- Tablets
+  - iPad (simulation and actual device)
+  - iPad Mini
+  - iPad Pro (10.5-inch)
+  - iPad Pro (12.9-inch) (simulated and real device)
+  - Kindle Fire HDX
+  - Nexus 10
+  - Nexus 7
+
+- Website responsiveness was also tested by resizing .
+
+
+
+#### Tested Sections 1 HTML & CSS
+
+
+- Checked button sizes so, they were responsive and large enough to be clicked.
+
+- Ensured individual section headers resized and appeared well when viewed on various device screens and added opacity to the navigation bar to allow for more visibility of section header area on smaller devices.
+
+- Spell checked all text content.
+
+- HTML and CSS validation via [w3.org](https://www.w3.org/ "W3C Official Site").
+
+- Checked margins and padding of the container (sections) to ensure the content within it did not look disproportionate on various screen sizes, individually smaller devices.
+
+#### Tested Sections 2 Python
+
+Manual testing was embraced for this application and acceptably passed. An example of the tests directed are as per the following:
+
+- Tested route catches and hyperlinks all through the page.
+- Tested the rationale of the application by looking at expected conduct against the database record information.
+- Tested the responsiveness of the application on various programs and after that utilising multiple gadgets.
+ 
+- max@max  as email and max as username can be used by visitor to test edit ,add,delete feautures in the app .
+
+## Deployment
+
+#### How the project got deployed to Heroku
+
+1. Make a `requirements.txt` file utilizing the terminal command 'pip freeze > `requirements.txt`
+
+2. Make a `Procfile` with the terminal command `echo web: python run.py > Procfile`
+
+3. `git add` and `git commit` the new prerequisites from the requirements.txt file and Procfile, then 'git push' the undertaking to GitHub. 
+
+4. Go to [Heroku](https://dashboard.heroku.com/) website.
+
+5. Make another application (app) on the [Heroku](https://dashboard.heroku.com/) website by tapping the "New" button on your dashboard. Name your app, followed by selecting Europe as your region. 
+
+6. Select application
+
+7. In the "Deployment Method" section, check to see if the application is already connected to GitHub. If not connected then click the relevant button to link the Heroku website to the dashboard.
+
+8. Affirm the connecting of the Heroku application to the right GitHub repository. 
+
+9. In the application dashboard, click on "Settings" > "Reveal Config Vars". 
+
+10. Set the accompanying config vars.
+
+ To retrieve your MONGO_URI please reference the official MongoDB Atlas documentation [here](https://docs.atlas.mongodb.com/)
+
+11. On the dashboard click "Deploy or alternatively in the "Automatic Deployment" section enable "Automatic Deploys" (optional).
+
+12. In the "Manual Deploy" section, set the branch to "master" then click "Deploy Branch."
+
+#### How to access the live application
+
+- A live demonstration is accessible by clicking [here](http://tasty-and-things.herokuapp.com/ "Live Demonstration: Tasty Things").
+## Credits
+- All initial recipes (of which there are ten), including their images, were recipes taken from the BBC GoodFood website which can be found [here](https://www.bbcgoodfood.com/recipes)
+- Slack and lots of tutorials from web .
+- Code Institute lessons.
+- CSS and JavaScript libraries.
+- For my Mentor who guided me in building this website.
+#### Inspiration
+- From my 8 year old Daughter who always encourages me with her ideas and suggestions in building this project !
