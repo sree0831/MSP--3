@@ -86,7 +86,7 @@ The overall aim of the project is to create a web application that allows users 
 |**Tactics:** What activities might help to realise the strategies?|<ul><li>Provide useful and relevant content to users</li><li>Provide a user experience that is accessible and enjoyable for all visitors</li><ul><li>following conventions for design and interaction</li><li>providing clear and consistent navigation</li></ul></ul>
 
 ## Defensive Design
-Defensive design for our Cookbook application will focus on the most common points of failure: user input areas, feedback and server problems.
+Defensive design for TastyThings application will focus on the most common points of failure: user input areas, feedback and server problems.
 *	I will employ form validation to check for user 
 *	I will protect users from server errors and broken links with informative messages
 *	My Defensive design will assist the user before mistakes happen.
@@ -125,7 +125,7 @@ As a user I can:
 
 #### Navigation
 
-- A navigation bar takes up space and a fixed one even more. That being the case, and that there is a lot of content to display in the form of recipes, etc., 
+- A navigation bar takes up space and wasn't fixed to top  because of site designing as the title of the site should come first ,so for easy navigation users can use bottom to top icon . That being the case, and that there is a lot of content to display in the form of recipes, etc., 
 The navbar will be available to users at the top of the application on every page.
 Unregistered users will see links to Sign In,contact and Recipes
 Registered users will see links to Sign Out, Recipes, Add Recipe and Recipes.
@@ -376,7 +376,7 @@ Manual testing was embraced for this application and acceptably passed. An examp
 - Tested the rationale of the application by looking at expected conduct against the database record information.
 - Tested the responsiveness of the application on various programs and after that utilising multiple gadgets.
  
-- max@max  as email and max as username can be used by visitor to test edit ,add,delete feautures in the app .
+- max@max  as email , max as username and max as password can be used by visitor to test edit ,add,delete feautures in the app .
 
 ## Deployment
 
