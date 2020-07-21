@@ -213,6 +213,7 @@ As a recipe document is created in the recipes collection, the author of the rec
 - [CodeInstitute](https://codeinstitute.net/)
 - [Slack](https://slack.com/)
 <hr><hr>
+
 ####  Features
 
 1. Home Page
