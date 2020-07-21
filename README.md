@@ -1,6 +1,6 @@
 <h1 align="center">
 <br>
-  <img src="static/img/res.PNG" width="600">
+  <img src="static/img/res.PNG" width="800">
   <br>
     <br>
   Tasty Things - Dine On Demand
@@ -219,7 +219,7 @@ As a recipe document is created in the recipes collection, the author of the rec
 1. Home Page
 
 <br>
-  <img src="static/img/home1.PNG" width="600">
+  <img src="static/img/home1.PNG" width="800">
   <br>
 
   - It is used to access the  add recipe page field which leads the user to login page with little description about the site .
@@ -242,7 +242,7 @@ As a recipe document is created in the recipes collection, the author of the rec
 5. Add recipe Page
 
 <br>
-  <img src="static/img/add.PNG" width="600">
+  <img src="static/img/add.PNG" width="800">
   <br>
 
   - It is applied for a registered user to create/ add recipe data.
@@ -251,7 +251,7 @@ As a recipe document is created in the recipes collection, the author of the rec
 6. Recipes Page
 
  <br>
-  <img src="static/img/res.PNG" width="600">
+  <img src="static/img/res.PNG" width="800">
   <br>
 
   - Allows a  user to read  recipe within the app.
@@ -262,15 +262,15 @@ As a recipe document is created in the recipes collection, the author of the rec
 7. Edit Page
 
 <br>
-  <img src="static/img/edit1.PNG" width="600">
+  <img src="static/img/edit1.PNG" width="800">
   <br>
 
   <br>
-  <img src="static/img/edit2.PNG" width="600">
+  <img src="static/img/edit2.PNG" width="800">
   <br>
 
   <br>
-  <img src="static/img/edit3.PNG" width="600">
+  <img src="static/img/edit3.PNG" width="800">
   <br>
   - For user to update and delete their own recipe data.
   - Only user who created recipes with same author name can view edit and delete features .
@@ -279,7 +279,7 @@ As a recipe document is created in the recipes collection, the author of the rec
 8. single Recipe Page
 
  <br>
-  <img src="static/img/single.PNG" width="600">
+  <img src="static/img/single.PNG" width="800">
   <br>
 
   - Allows a  user to read  recipe within the app.
@@ -290,7 +290,7 @@ As a recipe document is created in the recipes collection, the author of the rec
 9. Contact Page
 
 <br>
-  <img src="static/img/contact.PNG" width="600">
+  <img src="static/img/contact.PNG" width="800">
   <br>
 
   - Allows a user to book a table and see Contact details .
