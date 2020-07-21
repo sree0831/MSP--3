@@ -419,3 +419,7 @@ Manual testing was embraced for this application and acceptably passed. An examp
 - For my Mentor who guided me in building this website.
 #### Inspiration
 - From my 8 year old Daughter who always encourages me with her ideas and suggestions in building this project !
+
+git add
+git commit
+git push --force
