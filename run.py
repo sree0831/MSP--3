@@ -11,14 +11,15 @@ if os.path.exists("env.py"):
 
 
 app = Flask(__name__)
-
+#config for db access
 app.config["MONGO_DBNAME"] = 'tasty'
 app.config["MONGO_URI"] = os.getenv('MONGO_URI')
 
 mongo = PyMongo(app)
 
-app.secret_key = 'some_secret'
+app.secret_key = os.urandom(24) #Creates a random string to use as session key
 
+#----home page-----
 @app.route('/')
 def index():
     return render_template("index.html")
