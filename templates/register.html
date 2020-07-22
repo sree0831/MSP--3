@@ -1,66 +1,61 @@
 {% extends 'base.html' %} {% block content %}
 <!--page header-->
 <section class="page-section cta">
-<div class="container">
-		<div class="row">
-			<div class="col-xl-12 mx-auto">
-				<div class="cta-inner text-left rounded">
-					<!--Header-->
-					<div class="text-center">
-						<h3 class="pink-text mb-5"><strong>Register</strong></h3>
-					</div>
+	<div class="col-xl-12 mx-auto">
+		<div class="cta-inner text-left rounded">
+			<!--Header-->
+			<div class="text-center">
+				<h3 class="pink-text mb-5"><strong>Register</strong></h3>
+			</div>
 
-					<form action="{{ url_for('register') }}" method="POST">
+			<form action="{{ url_for('register') }}" method="POST">
 
-						<div class="md-form">
-							<input type="text" id="user" class="form-control" placeholder="Enter a user name"  name="name"   required>
-							<i class="material-icons prefix">face</i>
-							<label for="user">User Name</label>
+				<div class="md-form">
+					<input type="text" id="user" class="form-control" placeholder="Enter a user name"  name="name"   required>
+					<i class="material-icons prefix">face</i>
+					<label for="user">User Name</label>
 
-						</div>
+				</div>
 
-						<div class="md-form">
-							<input type="text" id="email" class="form-control"  name="email" required >
+				<div class="md-form">
+					<input type="email" id="email" class="form-control" placeholder="Email" name="email" required >
                                 {% if error == 'user_exists' %}
 
-							<span style="color: red;">This email already exists.</span>
-							{% endif %}
-							<i class="material-icons prefix">email</i>
-							<label for="email">Email</label>
-						</div>
-
-						<div class="md-form pb-3">
-							<input type="password" id="password" class="form-control" name="password" required placeholder="Password" >
-							<i class="material-icons prefix">lock</i>
-							<label for="password">Password</label>
-						</div>
-
-						<div class="form-check my-4">
-							<input class="form-check-input" type="checkbox" id="defaultCheck12">
-							<label for="defaultCheck12" class="grey-text">Accept the<a href="#" class="blue-text"> Terms and
-                            Conditions</a></label>
-						</div>
-
-
-						<!--Grid row-->
-						<div class="row d-flex align-items-center mb-4">
-
-							<!--button-->
-							<div class="col-md-3 col-md-6 text-center">
-								<input type="submit" value="Register" class="btn btn-brown btn-block btn-rounded z-depth-1">
-                            </div>
-                    </form>
-
-								<!--sign in link-->
-								<div class="col-md-6 float left">
-									<p class="font-small grey-text d-flex justify-content-end"> Have an account? <a
-											href="{{ url_for('login') }}" class="blue-text ml-1"> Sign In</a></p>
-								</div>
-							</div>
-						</div>
+					<span style="color: red;">This email already exists.</span>
+					{% endif %}
+					<i class="material-icons prefix">email</i>
+					<label for="email">Email</label>
 				</div>
+
+				<div class="md-form pb-3">
+					<input type="password" id="password" class="form-control" name="password" required placeholder="Password" >
+					<i class="material-icons prefix">lock</i>
+					<label for="password">Password</label>
+				</div>
+
+				<div class="form-check my-4">
+					<input class="form-check-input" type="checkbox" id="defaultCheck12">
+					<label for="defaultCheck12" class="grey-text">Accept the<a href="#" class="blue-text"> Terms and
+                            Conditions</a></label>
+				</div>
+
+
+				<!--Grid row-->
+				<div class="row d-flex align-items-center mb-4">
+
+					<!--button-->
+					<div class="col-md-3 col-md-6 text-center">
+						<input type="submit" value="Register" class="btn btn-brown btn-block btn-rounded z-depth-1">
+                            </div>
+			</form>
+
+			<!--sign in link-->
+			<div class="col-md-6 float left">
+				<p class="font-small grey-text d-flex justify-content-end"> Have an account? <a
+						href="{{ url_for('login') }}" class="blue-text ml-1"> Sign In</a></p>
 			</div>
 		</div>
+	</div>
 </section>
 
 <!--BACK TO TOP -->
