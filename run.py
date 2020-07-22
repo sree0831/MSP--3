@@ -167,6 +167,7 @@ def register():
 #----login----
 @app.route('/login', methods=['POST', 'GET'])
 def login():
+    
     # check for logged in user
     email = session.get('email')
     if email:
