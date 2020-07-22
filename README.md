@@ -219,19 +219,24 @@ As a recipe document is created in the recipes collection, the author of the rec
 1. Home Page
 
 <br>
-  <img src="static/img/home1.PNG" width="800">
+  <img src="static/img/index.PNG" width="800">
   <br>
 
   - It is used to access the  add recipe page field which leads the user to login page with little description about the site .
 <hr><hr>
 
  2. Sign Up
-
+<br>
+  <img src="static/img/signup.PNG" width="800">
+  <br>
 
   - I have used for a user to register for an account so they can log in into the app.
+<hr><hr>
 
 3. Sign In
-
+<br>
+  <img src="static/img/signin.PNG" width="800">
+  <br>
   - Used for a user to login to the app so to access and utilise all available features.
 
 4. MongoDB (NoSQL Database)
@@ -269,11 +274,9 @@ As a recipe document is created in the recipes collection, the author of the rec
   <img src="static/img/edit2.PNG" width="800">
   <br>
 
-  <br>
-  <img src="static/img/edit3.PNG" width="800">
-  <br>
+  
   - For user to update and delete their own recipe data.
-  - Only user who created recipes with same author name can view edit and delete features .
+  - Only user who created recipes with same username and  author name can view edit and delete features .
 <hr><hr>
 
 8. single Recipe Page
@@ -283,8 +286,10 @@ As a recipe document is created in the recipes collection, the author of the rec
   <br>
 
   - Allows a  user to read  recipe within the app.
-  - users with same author name can view options for update and delete.
-
+  - users with same username and author name can view options for update and delete.
+<br>
+  <img src="static/img/edit3.PNG" width="800">
+  <br>
 <hr><hr>
 
 9. Contact Page
