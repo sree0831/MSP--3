@@ -11,7 +11,7 @@
 
 <h4 align="center">A Recipe Manager, Accessible Online, Which Enables Users to Create, Read, Update and Delete Recipes</h4>
 
-- [Live link](http://tasty-and-things.herokuapp.com/)
+- [Live link](https://tasty-and-things.herokuapp.com/)
 - [Github Link](https://github.com/sree0831/MSP-3.git)
 <hr><hr>
 
