@@ -42,6 +42,8 @@
     - [Languages Frameworks Tools](#Languages-Frameworks-Tools)
     - [Other-Resources](#Other-Resources)
     - [Features](#Features)
+    - [Features Left To Implement](#Features-Left-To-Implement)
+    - [Challenges](#Challenges)
 
 
 
@@ -93,7 +95,7 @@ Defensive design for TastyThings application will focus on the most common point
 
 The user will be informed if that username has already been taken and asked to enter a different username. The form will have validation and offer clear instructions to users on how to proceed.
 Environmental variables have been used to protect access details to the database.
-Development was done using a local database, and the Heroku hosted app connects to an mLab database. Heroku environmental variables hide the database name, the username and password.
+
 <hr><hr>
 
 ## UX
@@ -202,8 +204,8 @@ As a recipe document is created in the recipes collection, the author of the rec
 - [Materialize icons](https://material.io/resources/icons/?style=baseline "Materialize icons") 
     - is utilised for developing the  Material Design Icons .
 
-- [Bootstrap](https://startbootstrap.com/ "Google Fonts Official Site") 
-    - is used as a template with changes across the entire website
+- [Bootstrap](https://startbootstrap.com/ "startbootstrap Official Site") 
+    - is the main soul of the app which is used as a template with changes across the entire website
 
 
 
@@ -308,6 +310,15 @@ As a recipe document is created in the recipes collection, the author of the rec
 -  Comprises a custom server error.
 14. [Base Template](/app/templates/base.html)
 * Includes all the scripts and css files that have been used for the construction of the other templates.
+
+#### Features Left To Implement
+
+- A user page where user can see only his recipies.
+- A chat could be added so that users could interact with each other.
+
+#### Challenges
+- Flask and MongoDB integration was a great learning experience but tricky at times.
+- Creating the logic and routes on python has been the biggest challenge for me.
 
 
 ## Testing
